@@ -3,27 +3,33 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <h1>Hello {{title}}</h1>
-    <img [src]="image" /> <br />
+    <h1>{{name}}</h1>
     <h2>This is {{name}} from house {{house}}.</h2>
-    <label [style.color] = "color">Favorite color</label><br />
+    <input [value]="name"> Property binding <br/>
+    <input #charName [value]="name" (input)="name=charName.value"> Property+event binding (selector) <br />
+    <input [value]="name" (keyup)="name=$event.target.value"> Keyup + $event.target <br />
+    <input [value]="name" (keyup.enter)="name=$event.target.value"> Keyup.enter + $event.target <br />
+    <input [value]="name" (blur)="name=$event.target.value"> Blur + $event.target <br />
+    <input [value]="name" 
+      (blur)="name=$event.target.value"
+      (keyup.enter)="name=$event.target.value"> Blur + keyup.enter + $event.target <br />
+    
+    <input [(ngModel)]="name"> [(ngModel)] binding <br />
+
     <button (click)="hideDetailsClick()">Show/hide details</button><br />
-    <select (change)="colorChange($event.target.value)">
-        <option>red</option>
-        <option>blue</option>
-        <option>green</option>
-    </select>
     <div [hidden]="hideDetails">
       <h3>Details</h3>
       <fieldset>
-      <select (change)="houseChange($event.target.value)">
-        <option>Arryn</option>
-        <option>Frey</option>
-        <option>Greyjoy</option>
-        <option>Lannister</option>
-        <option>Stark</option>
-        <option>Tyrell</option>
-      </select>
+      <label>House:
+        <select (change)="houseChange($event.target.value)">
+          <option>Arryn</option>
+          <option>Frey</option>
+          <option>Greyjoy</option>
+          <option>Lannister</option>
+          <option>Stark</option>
+          <option>Tyrell</option>
+        </select>
+      </label>
       </fieldset>
       <fieldset>
         <label>Dead: </label>{{dead}}
@@ -33,18 +39,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent  { 
-  title = 'Angular + ASP.NET Core workshop';
   name = "Tyrion";
-  image = "./got.jpg";
-  color = "red";
   house = "Lannister";
   dead = true;
-  houses = ['Arryn', 'Frey', 'Greyjoy', 'Lannister', 'Stark', 'Tyrell'];
   hideDetails = false;
-
-  colorChange(color: string) {
-    this.color = color;
-  }
 
   houseChange(house: string) {
     this.house = house;
