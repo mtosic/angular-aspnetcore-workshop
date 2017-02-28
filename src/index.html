@@ -15,8 +15,9 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
     <script src="systemjs.config.js"></script>
-    <script>
-      System.import('main.js').catch(function(err){ console.error(err); });
+    <script>      
+      //System.import('app/exercise-01/main').catch(function(err){ console.error(err); }); //change to this if you want to load specific exercise
+      System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
 
