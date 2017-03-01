@@ -15,7 +15,6 @@ export class DataService {
 
     getCharactersP(): Promise<Character[]> {
         this.logger.log('Getting characters as Promise.');
-        
         const characters = createTestCharacters();
 
         return new Promise(resolve => {
@@ -28,7 +27,6 @@ export class DataService {
 
     getCharacters(): Observable<Character[]> {
         this.logger.log('Getting characters as Observable.');
-        
         const characters = createTestCharacters();
 
         return of(characters)
