@@ -1,0 +1,12 @@
+<h1>GoT Characters</h1>
+<p><i>Click to select a character</i></p>
+
+<ul>
+    <li *ngFor="let char of characters" (click)="character = char" [ngClass]="{selected: char === character}">
+        {{char.name}}
+    </li>
+</ul>
+
+<div *ngIf="character">
+    <character-detail [character]="character" (shift)="shift($event)"></character-detail>
+</div>
