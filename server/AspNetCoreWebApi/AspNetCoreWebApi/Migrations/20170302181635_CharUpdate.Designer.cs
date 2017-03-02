@@ -8,9 +8,10 @@ using AspNetCoreWebApi.Data;
 namespace AspNetCoreWebApi.Migrations
 {
     [DbContext(typeof(GoTContext))]
-    partial class GoTContextModelSnapshot : ModelSnapshot
+    [Migration("20170302181635_CharUpdate")]
+    partial class CharUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
