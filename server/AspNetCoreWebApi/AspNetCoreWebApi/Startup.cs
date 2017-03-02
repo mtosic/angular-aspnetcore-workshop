@@ -32,6 +32,8 @@ namespace AspNetCoreWebApi
             services.AddDbContext<GoTContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddCors();
+
             // Add framework services.
             services.AddMvc();
         }
@@ -41,6 +43,9 @@ namespace AspNetCoreWebApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:3000"));
 
             app.UseMvc();
         }
