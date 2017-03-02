@@ -4,25 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreWebApi.Models;
+using AspNetCoreWebApi.Data;
 
 namespace AspNetCoreWebApi.Controllers
 {
     [Route("api/[controller]")]
     public class CharacterController : Controller
     {
+        private readonly GoTContext db;
+        public CharacterController(GoTContext context)
+        {
+            db = context;
+        }
+
+
         // GET api/values
         [HttpGet]
         public IEnumerable<Character> Get()
         {
-            var characters = new List<Character>
-            {
-                new Character { Id = 1, Name = "Jon Snow"  },
-                new Character { Id = 2, Name = "Arya Stark" },
-                new Character { Id = 3, Name = "Cersei Lannister" },
-                new Character { Id = 4, Name = "Tyrion Lannister" },
-                new Character { Id = 5, Name = "Mellisandre" },
-                new Character { Id = 6, Name = "Daenerys Targaryen" }
-            };
+            var characters = db.Characters.ToList();
 
             return characters;
 
