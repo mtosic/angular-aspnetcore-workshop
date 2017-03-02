@@ -30,7 +30,7 @@ namespace AspNetCoreWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GoTContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
 
             services.AddCors();
 
@@ -43,6 +43,9 @@ namespace AspNetCoreWebApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseCors(builder =>
                 builder.WithOrigins("http://localhost:3000"));
