@@ -17,7 +17,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class DataService {
     private charactersUrl = 'api/characters';
-    private housesUrl = 'api/house';
+    private housesUrl = 'api/houses';
 
     constructor(
         private logger: LoggerService,
