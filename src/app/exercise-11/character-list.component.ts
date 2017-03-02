@@ -26,8 +26,8 @@ export class CharacterListComponent implements OnInit {
 
     // this.dataService.getCharactersP().then(chars => {
       this.dataService.getCharacters().subscribe(chars => {
-        this.isBusy = false;
-        this.characters = chars;
+      this.isBusy = false;
+      this.characters = chars;
       },
       (errorMsg: string) => {
         this.isBusy = false;
