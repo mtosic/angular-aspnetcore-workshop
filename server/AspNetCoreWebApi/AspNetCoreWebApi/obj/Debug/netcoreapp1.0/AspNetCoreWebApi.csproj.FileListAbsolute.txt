@@ -1,0 +1,8 @@
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\netcoreapp1.0\AspNetCoreWebApi.deps.json
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\netcoreapp1.0\AspNetCoreWebApi.runtimeconfig.json
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\netcoreapp1.0\AspNetCoreWebApi.runtimeconfig.dev.json
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\netcoreapp1.0\AspNetCoreWebApi.dll
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\netcoreapp1.0\AspNetCoreWebApi.pdb
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\obj\Debug\netcoreapp1.0\AspNetCoreWebApi.AssemblyInfo.cs
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\obj\Debug\netcoreapp1.0\AspNetCoreWebApi.dll
+C:\workshop\angular-aspnetcore\server\AspNetCoreWebApi\AspNetCoreWebApi\obj\Debug\netcoreapp1.0\AspNetCoreWebApi.pdb
